@@ -1,4 +1,5 @@
 import { ShoppingBag } from "lucide-react";
+import { toast } from "sonner";
 
 interface ProductCardProps {
   name: string;
@@ -6,9 +7,17 @@ interface ProductCardProps {
   price: number;
   image: string;
   delay?: number;
+  onAddToCart: (product: { name: string; slogan: string; price: number; image: string }) => void;
 }
 
-const ProductCard = ({ name, slogan, price, image, delay = 0 }: ProductCardProps) => {
+const ProductCard = ({ name, slogan, price, image, delay = 0, onAddToCart }: ProductCardProps) => {
+  const handleAddToCart = () => {
+    onAddToCart({ name, slogan, price, image });
+    toast.success(`${name} added to cart!`, {
+      description: `"${slogan}"`,
+    });
+  };
+
   return (
     <div 
       className="product-card group opacity-0 animate-slide-up"
@@ -24,7 +33,10 @@ const ProductCard = ({ name, slogan, price, image, delay = 0 }: ProductCardProps
         
         {/* Quick add overlay */}
         <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <button className="btn-primary flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+          <button 
+            onClick={handleAddToCart}
+            className="btn-primary flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+          >
             <ShoppingBag size={18} />
             Add to Cart
           </button>
