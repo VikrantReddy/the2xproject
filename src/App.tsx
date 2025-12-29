@@ -9,19 +9,18 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// App.tsx
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/checkout/:encoded" element={<Checkout />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      {/* Do NOT wrap in <BrowserRouter> here, it's already in main.tsx */}
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/checkout/:encoded" element={<Checkout />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </TooltipProvider>
   </QueryClientProvider>
 );
