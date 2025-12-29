@@ -5,7 +5,7 @@ import { BrowserRouter, createBrowserRouter, RouterProvider } from "react-router
 
 // main.tsx
 createRoot(document.getElementById("root")!).render(
-    <BrowserRouter basename="/the2xproject">
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
   );
