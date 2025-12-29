@@ -53,7 +53,7 @@ const ProductCard = ({ name, slogan, price, image, delay = 0, onAddToCart }: Pro
       {/* Product info */}
       <div className="p-4">
         <h3 className="font-display text-lg font-semibold mb-1">{name}</h3>
-        <p className="font-body text-primary font-medium">${price}</p>
+        <p className="font-body text-primary font-medium">₹{price}</p>
       </div>
     </div>
   );

@@ -3,18 +3,18 @@ import { Heart, Users, Globe } from "lucide-react";
 const values = [
   {
     icon: Heart,
-    title: "Ethically Made",
-    description: "Every garment is produced in fair-wage factories with sustainable materials."
+    title: "Make in India",
+    description: "Each Design is thought through and crafted in India."
   },
   {
     icon: Users,
     title: "Community First",
-    description: "10% of all profits go directly to women's rights organizations worldwide."
+    description: "10% of all profits go directly to charitable organizations worldwide."
   },
   {
     icon: Globe,
     title: "Global Impact",
-    description: "Supporting activists, survivors, and changemakers in over 30 countries."
+    description: "Supporting activists, survivors, and changemakers across countries."
   }
 ];
 

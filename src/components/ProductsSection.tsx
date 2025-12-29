@@ -1,47 +1,20 @@
 import ProductCard from "./ProductCard";
 import { useCart } from "@/contexts/CartContext";
-
-const products = [
-  {
-    name: "The Equality Tee",
-    slogan: "Equal Rights Are Not Debatable",
-    price: 38,
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&h=800&fit=crop"
-  },
-  {
-    name: "Resist & Rise",
-    slogan: "She Believed She Could, So She Did",
-    price: 42,
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop"
-  },
-  {
-    name: "The Future Tee",
-    slogan: "The Future Is Female",
-    price: 38,
-    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&h=800&fit=crop"
-  },
-  {
-    name: "Smash The Patriarchy",
-    slogan: "Well-Behaved Women Rarely Make History",
-    price: 45,
-    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&h=800&fit=crop"
-  },
-  {
-    name: "My Body My Choice",
-    slogan: "Bodily Autonomy Is A Human Right",
-    price: 40,
-    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&h=800&fit=crop"
-  },
-  {
-    name: "Fierce & Fearless",
-    slogan: "Nevertheless, She Persisted",
-    price: 38,
-    image: "https://images.unsplash.com/photo-1485968579169-56d4cf3e002c?w=600&h=800&fit=crop"
-  },
-];
+import { products } from "@/lib/products";
 
 const ProductsSection = () => {
   const { addToCart } = useCart();
+
+  // Dynamic grid layout based on product count
+  const getGridClass = () => {
+    const count = products.length;
+    if (count === 1) return "grid-cols-1 max-w-sm mx-auto";
+    if (count === 2) return "grid-cols-1 md:grid-cols-2 max-w-2xl mx-auto";
+    if (count === 3) return "grid-cols-1 md:grid-cols-3";
+    if (count === 4) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-2";
+    if (count === 5) return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+    return "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+  };
 
   return (
     <section id="shop" className="py-24 bg-secondary/30">
@@ -60,7 +33,7 @@ const ProductsSection = () => {
         </div>
 
         {/* Products grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={`grid ${getGridClass()} gap-8`}>
           {products.map((product, index) => (
             <ProductCard 
               key={product.name}
@@ -73,9 +46,9 @@ const ProductsSection = () => {
 
         {/* View all CTA */}
         <div className="text-center mt-16">
-          <a href="#shop" className="btn-outline inline-block">
-            View All Designs
-          </a>
+          <button disabled className="btn-outline inline-block opacity-60 cursor-not-allowed">
+            More Coming Soon
+          </button>
         </div>
       </div>
     </section>

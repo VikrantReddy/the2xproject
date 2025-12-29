@@ -68,8 +68,8 @@ const HeroSection = () => {
               <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mt-1">Activists</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-3xl md:text-4xl font-bold text-primary">50+</p>
-              <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mt-1">Designs</p>
+              <p className="font-display text-3xl md:text-4xl font-bold text-primary">1</p>
+              <p className="font-body text-xs tracking-wider uppercase text-muted-foreground mt-1">Design</p>
             </div>
             <div className="text-center">
               <p className="font-display text-3xl md:text-4xl font-bold text-primary">100%</p>
