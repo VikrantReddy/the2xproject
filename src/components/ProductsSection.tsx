@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard";
+import { useCart } from "@/contexts/CartContext";
 
 const products = [
   {
@@ -40,6 +41,8 @@ const products = [
 ];
 
 const ProductsSection = () => {
+  const { addToCart } = useCart();
+
   return (
     <section id="shop" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
@@ -63,6 +66,7 @@ const ProductsSection = () => {
               key={product.name}
               {...product}
               delay={0.1 * index}
+              onAddToCart={addToCart}
             />
           ))}
         </div>

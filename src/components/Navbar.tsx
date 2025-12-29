@@ -1,8 +1,10 @@
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useCart } from "@/contexts/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { totalItems, setIsCartOpen } = useCart();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
@@ -28,11 +30,16 @@ const Navbar = () => {
 
           {/* Cart & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <button className="relative p-2 hover:text-primary transition-colors">
+            <button 
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 hover:text-primary transition-colors"
+            >
               <ShoppingBag size={22} />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium animate-scale-in">
+                  {totalItems}
+                </span>
+              )}
             </button>
             <button 
               className="md:hidden p-2"
