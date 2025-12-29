@@ -1,0 +1,15 @@
+export interface Product {
+  name: string;
+  slogan: string;
+  price: number;
+  image: string;
+}
+
+export const products: Product[] = [
+  {
+    name: "The Right Behaviour Tee",
+    slogan: "Well-Behaved Women Rarely Make History",
+    price: 999,
+    image: "https://lh3.googleusercontent.com/rd-d/ALs6j_EYJ0Vra7rhJYLK2iSeDYs7vWbSCJqZLUoKEs6jdmCULPWe3Gh4l8DRNuDPuaxQQmX9TAfMDee8up_1bNTLMh1qWe1D5WIKHlKcmVCl9Hu_RCN9pyyWLcdv_ipeEJ_Z-C4IK5VF_k25reNGuTofVTMSWYWkxAXxsNxnH3-BGM1b3Bb0bOJSFiDHp-C86E5ZjTFrv3ezCEtIct6FvfyaautZnp0cvAP27VkbVrPaBrza1Sea1azV8rhPHHsrRWvRlgBE9BB-Hsupw_gjUxktwr-w1cU5GA7GY0sLKg60J872BgUJQdFGTUbZLFH-3jbRMcoxdkvUq5HIpKeUNx6qqPKTLrR0E4kYHttcXv5pF4yXFbWNkdNXt4xoWou30Gc9FuGWPgFUoKDok67b8yml13rlFpa5C7Minw6x2NopRjrkD0D-B_adn7e67OINaSPtrEIH97d5U9bTv6-5XfEtZMkOjpETaE3a2vl2x3HM1iC3q66hGZPAA43jbBlQ0qZo3vtxp65UYNQ8UdtG8Ycdi0r9D8dkyKN7HxWTcOKLleOQqfhe9MzquUAX2lwR04UAY0G6qZfWbvvC-P-UOK8GdmAfBrSL8fJUfw070mSVMk43scRx4O0Mp1ta-7cSEmjx1FPpswGVCfEd2txI7mq1R3u04NgesYeQ_hoValwz2Yd4crK3EyVc7oO7b3i1XVCbZV_jcZJ159BP7e-CoF87IRuvkwPz0Jp7KLAOL86Vtnf2IAY4L5MsutCxQ125wx6AkZJeqrx91j8L-7RqR_Ap2oy5p-3SQ0AveQPT2P0TTnZIEg0JHONR1U0bmSs1ZYQcZ3pZr7Ya5GPdoxHy1M_EqscEC6vqOTEdn0q7byayCLORXAYDx3qp7P8BsiZssFpnuleZEVCHOEA7RQXRVRQEnTA02n5774Aa3Zqyy_kj1V5pPYTO62-RssAbl1TrREbUXgrVg-BDN1m3Ievs3pb_HdFur8vYIe2J4bOmLU_QxczsiCdUrcAnTfl3X6fnmsQ0TJ1WBu2-7PesuTy5jPyz8G4o9aSRl53-IJUHQ64guJaTW2Ml7A=w2508-h1300?auditContext=forDisplay"
+  },
+];
